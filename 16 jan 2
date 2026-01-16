@@ -1,0 +1,33 @@
+#include <iostream>
+#include <algorithm>
+#include <string>
+using namespace std;
+
+int main() {
+  // Create an array of integers
+  string N[12] ={"Frank","Pond","Ten","Few","Palm","Boss","Mink","Mind","Ashi","Beer","Ji","Nerd"};
+  string n[12] ={"แฟรงค์","ปอนด์","เท็น","ฟิว","ปาล์ม","บอส","มิ้ง","มาย","อชิ","เบียร์","จิ","เนิร์ต"};
+   int z = sizeof(N)/sizeof(N[0]);
+
+cout << "===========================" << endl;
+  for(const string&name : N){
+     cout << name <<endl;
+  }    
+  cout << "===========================" << endl;
+  sort(N,N+z);
+  for(const string&name : N){
+     cout << name <<endl;
+  }    
+  cout << "===========================" << endl;
+  for(const string&name : n){
+     cout << name <<endl;
+  }    
+  cout << "===========================" << endl;
+  sort(n,n+z);
+  for(const string&name : n){
+     cout << name <<endl;
+  }    
+
+
+  return 0;
+}
