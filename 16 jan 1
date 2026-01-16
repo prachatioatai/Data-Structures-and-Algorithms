@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+int main() {
+  // Create an array of integers
+  int R1[13] = {165, 162, 174, 175, 170,180,155,155,175,178,170,163,170};
+  int x = sizeof(R1) / sizeof(R1[0]);
+  
+  int W1[13] = {105,61,64,65,55,60,56,40,53,45,49,53,60};
+  int y = sizeof(W1)/sizeof(W1[0]);
+  string N1[13] ={"Frank","Pond","Ten","Few","Palm","Boss","Ming","Mind","Achi","Beer","Ji","Nerd", "bew"};
+
+    // Sort array (by default in ascending order)
+    sort(R1, R1 + x);
+
+    for (int num : R1){
+        cout << num << "\n";
+        }
+ cout << "==========================" << endl;       
+    sort(W1, W1 + y);
+
+    for (int num : W1){
+        cout << num << endl;
+        }
+cout << "==========================" << endl;
+        
+    sort(W1, W1 + y, greater<int>());
+    for(int num : W1){
+       cout<< num << endl;
+       }
+cout<< "==========================" << endl;
+    for(const string&name : N1) {
+       cout <<name<<endl;
+    }
+    return 0;
+}
