@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct TreeNode {
+    char* data;
+    struct TreeNode* left;
+    struct TreeNode* right;
+} TreeNode;
+
+TreeNode* createNewNode(char* data) {
+    TreeNode* newNode = (TreeNode*)malloc(sizeof(TreeNode));
+    newNode->data = data;
+    newNode->left = NULL;
+    newNode->right = NULL;
+    return newNode;
+}
+
+int main() {
+    TreeNode* root = createNewNode("R");
+    TreeNode* node2 = createNewNode("TenA");
+    TreeNode* node3 = createNewNode("TenB");
+    TreeNode* node4 = createNewNode("TenC");
+    TreeNode* node5 = createNewNode("TenD");
+    TreeNode* node6 = createNewNode("TenE");
+    TreeNode* node7 = createNewNode("TenF");
+    TreeNode* node8 = createNewNode("TenG");
+	TreeNode* node9 = createNewNode("TenH");
+    TreeNode* node10 = createNewNode("TenI");
+    root->left = node2;
+    root->right = node3;
+
+    node2->left = node4;
+    node2->right = node5;
+
+    node3->left = node6;
+    node3->right = node7;
+
+    node4->left = node8;
+    node4->right = node9;
+    
+    node5->left = node10;
+
+    // Test
+    printf("root->right->left->data: %s\n", root->left->right->left->data);
+
+    free(node10);
+    free(node9);
+    free(node8);
+    free(node7);
+    free(node6);
+    free(node3);
+    free(node4);
+    free(node5);
+    free(node2);
+    free(root);
+
+    return 0;
+}
+
+//C
