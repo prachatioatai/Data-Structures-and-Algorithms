@@ -1,0 +1,69 @@
+class TreeNode:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+        
+def inOrderTraversal(node):
+    if node is None:
+        return
+    inOrderTraversal(node.left)
+    print(node.data, end=", ")
+    inOrderTraversal(node.right)
+    
+def preOrderTraversal(node):
+    if node is None:
+        return
+    print(node.data, end=", ")
+    preOrderTraversal(node.left)
+    preOrderTraversal(node.right)
+    
+def postOrderTraversal(node):
+    if node is None:
+        return
+    postOrderTraversal(node.left)
+    postOrderTraversal(node.right)
+    print(node.data, end=", ")
+
+root = TreeNode('5')
+
+node12 = TreeNode('12')
+node13 = TreeNode('13')
+
+node7 = TreeNode('7')
+node14 = TreeNode('14')
+node2 = TreeNode('2')
+
+node17 = TreeNode('17')
+node23 = TreeNode('23')
+node27 = TreeNode('27')
+node3 = TreeNode('3')
+node8 = TreeNode('8')
+node11 = TreeNode('11')
+
+root.left = node12
+root.right = node13
+
+node12.left = node7
+
+node13.left = node14
+node13.right = node2
+
+node7.left = node17
+node7.right = node23
+
+node14.left = node27
+node14.right = node3
+
+node2.left = node8
+node2.right = node11
+
+print("\nINORDER")
+inOrderTraversal(root)
+print("\n")
+print("\nPREORDER")
+preOrderTraversal(root)
+print("\n")
+print("\nPOSTORDER")
+postOrderTraversal(root)
+print("\n")
